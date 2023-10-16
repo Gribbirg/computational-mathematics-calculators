@@ -125,6 +125,8 @@ def print_table(t):
 
 def create_pic(t):
     way = f"{A} {B} {C} {D} {E} {F} {G} {a} {b}"
+    if "graphs" not in os.listdir():
+        os.makedirs("graphs")
     if way not in os.listdir("graphs"):
         os.makedirs("graphs/" + way)
 
