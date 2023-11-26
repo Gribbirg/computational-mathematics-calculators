@@ -2,21 +2,21 @@ from ForAll.ForAll import arif_round
 
 A = 0.9
 B = -2.1
-# C = 0.5
-C = 2
+C = 0.5
+# C = 2
 
 H = 0.5
 FROM = 0
 TO = 2
-# ROUND = 6
-ROUND = 8
+ROUND = 6
+# ROUND = 8
 
-
-# def fun(x, y):
-#     return A * y + B * pow(x - 1, 2)
 
 def fun(x, y):
-    return pow(x, 2) + y
+    return A * y + B * pow(x - 1, 2)
+
+# def fun(x, y):
+#     return pow(x, 2) + y
 
 
 def euler(x, y):
@@ -76,6 +76,6 @@ print("Cauchy-Euler:")
 print_table(get_table(cauchy_euler))
 print("-" * 100)
 
-print("Runge_Kutta:")
+print("Runge-Kutta:")
 print_table(get_table(runge_kutta))
 print("-" * 100)
