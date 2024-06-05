@@ -37,20 +37,6 @@ def get_h(n):
     return arif_round((b - a) / n, ROUND)
 
 
-def get_y_list(x_list):
-    for i in x_list:
-        print(f"f({i}) = {arif_round(fun(i), ROUND)}")
-    return [arif_round(fun(i), ROUND) for i in x_list]
-
-
-def get_y_gauss_list(n, x_list):
-    print(f"f({(b + a) / 2} + {(b - a) / 2} * ({KOEF_TABLE[(n - 4) // 2][0][0]})) = f({x_list[0]}) = "
-          f"{arif_round(fun(x_list[0]), ROUND)}")
-    for i in range(1, n):
-        print(f"f(- / - ({KOEF_TABLE[(n - 4) // 2][i][0]})) = f({x_list[i]}) = {arif_round(fun(x_list[i]), ROUND)}")
-    return [arif_round(fun(i), ROUND) for i in x_list]
-
-
 def left_rectangle(h, y_list):
     return arif_round(h * sum(y_list[:-1]), ROUND)
 
@@ -70,6 +56,20 @@ def trapezoid(h, y_list):
 def parabola(h, n, y_list):
     return arif_round(h / 3 * (y_list[0] + y_list[-1] + 2 * sum([y_list[2 * i] for i in range(1, n // 2)]) + 4 * sum(
         [y_list[2 * i + 1] for i in range(n // 2)])), ROUND)
+
+
+def get_y_list(x_list):
+    for i in x_list:
+        print(f"f({i}) = {arif_round(fun(i), ROUND)}")
+    return [arif_round(fun(i), ROUND) for i in x_list]
+
+
+def get_y_gauss_list(n, x_list):
+    print(f"f({(b + a) / 2} + {(b - a) / 2} * ({KOEF_TABLE[(n - 4) // 2][0][0]})) = f({x_list[0]}) = "
+          f"{arif_round(fun(x_list[0]), ROUND)}")
+    for i in range(1, n):
+        print(f"f(- / - ({KOEF_TABLE[(n - 4) // 2][i][0]})) = f({x_list[i]}) = {arif_round(fun(x_list[i]), ROUND)}")
+    return [arif_round(fun(i), ROUND) for i in x_list]
 
 
 def gauss(n, y_list):
